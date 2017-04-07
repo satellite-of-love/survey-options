@@ -71,12 +71,12 @@ function main() {
         fi
 
         # Build the Docker image only on releases
-        if [[ $TRAVIS_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+        # if [[ $TRAVIS_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             if ! $mvn docker:build -DpushImageTag; then
                 err "maven docker build or push failed"
                 return 1
             fi
-        fi
+        #fi
     fi
 }
 
