@@ -31,6 +31,7 @@ function main() {
             err "failed to set timestamped project version"
             return 1
         fi
+        mvn help:evaluate -Dexpression=project.version # get all the downloading out of your system
         project_version=$(mvn help:evaluate -Dexpression=project.version | grep -v "^\[")
         if [[ $? != 0 || ! $project_version ]]; then
             err "failed to parse project version"
