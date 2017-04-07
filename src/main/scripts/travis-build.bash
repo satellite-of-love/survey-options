@@ -17,7 +17,7 @@ function err() {
 function main() {
     msg "branch is ${TRAVIS_BRANCH}"
 
-    local mvn="mvn --settings .settings.xml -B -V -U"
+    local mvn="mvn -B -V -U"
     local project_version
     if [[ $TRAVIS_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
         if ! $mvn build-helper:parse-version versions:set -DnewVersion="$TRAVIS_TAG" versions:commit; then
@@ -50,14 +50,6 @@ function main() {
 
     if [[ $TRAVIS_BRANCH == master || $TRAVIS_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
         msg "version is $project_version"
-        local mvn_deploy_args
-        if [[ $TRAVIS_BRANCH == master ]]; then
-            mvn_deploy_args=-DaltDeploymentRepository=public-atomist-dev::default::https://atomist.jfrog.io/atomist/libs-dev-local
-        fi
-        if ! $mvn deploy -DskipTests $mvn_deploy_args; then
-            err "maven deploy failed"
-            return 1
-        fi
 
         if ! git config --global user.email "travis-ci@atomist.com"; then
             err "failed to set git user email"
