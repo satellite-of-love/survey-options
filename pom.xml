@@ -57,6 +57,27 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.4.12</version>
+				<configuration>
+					<imageName>${ATOMIST_DOCKER_REGISTRY}/${project.name}</imageName>
+					<dockerDirectory>${project.build.directory}/docker</dockerDirectory>
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}-bin.tar.gz</include>
+						</resource>
+					</resources>
+					<useConfigFile>true</useConfigFile>
+					<imageTags>
+						<imageTag>${project.version}</imageTag>
+						<imageTag>latest</imageTag>
+					</imageTags>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>
