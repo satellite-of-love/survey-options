@@ -1,7 +1,8 @@
 FROM sforzando-docker-dockerv2-local.artifactoryonline.com/newrelic:0.5.0
 
 echo "what is here"
-ls /opt/build
+pwd
+ls -la
 COPY BOOT-INF/lib /opt/build/BOOT-INF/lib
 COPY META-INF /opt/build/META-INF
 COPY BOOT-INF/classes /opt/build/BOOT-INF/classes
