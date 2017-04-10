@@ -5,6 +5,8 @@
 
 This project contains a [Spring Boot][boot] [REST][rest] service for "Supply list of options for a survey".
 
+Jess is going to use it in a demo.
+
 [boot]: https://projects.spring.io/spring-boot/
 [rest]: https://en.wikipedia.org/wiki/Representational_state_transfer
 
