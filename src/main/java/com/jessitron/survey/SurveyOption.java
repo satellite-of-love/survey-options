@@ -1,14 +1,31 @@
 package com.jessitron.survey;
 
-import java.net.URL;
-
 public class SurveyOption {
 
-    public final URL image;
-    public final String text;
+    private String imageLocation;
+    private String text;
 
-    public SurveyOption(URL image, String text) {
-        this.image = image;
+    public void setImageLocation(String imageLocation) {
+        this.imageLocation = imageLocation;
+    }
+
+    public void setText(String text) {
         this.text = text;
     }
+
+    public String getImageLocation() {
+        return imageLocation;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public SurveyOption(String imageLocation, String text) {
+        this.imageLocation = imageLocation;
+        this.text = text;
+
+    }
+
+    public SurveyOption() {}
 }

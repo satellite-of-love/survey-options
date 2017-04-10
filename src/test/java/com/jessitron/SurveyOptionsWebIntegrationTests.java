@@ -8,9 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Map;
-
-import static com.jessitron.InitializedStringMap.mapOf;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -35,11 +32,11 @@ public class SurveyOptionsWebIntegrationTests {
 
     @Test
     public void optionsTest() {
-        int count = 2;
-        Map<String,String> parameters = mapOf("seed", "123", "count", "" + count);
-        parameters.forEach((k, v) -> System.out.printf("Parameter %s=%s\n", k, v));
-        SurveyOptions result = restTemplate.getForObject(BASE_PATH + "/surveyOptions", SurveyOptions.class, parameters);
-        assertEquals(count, result.options.size());
+        int count = 2; // todo: how can I use a URI template to populate this?
+        int seed = 123;
+        SurveyOptions result = restTemplate.getForObject(BASE_PATH + "/surveyOptions?seed=123&count=2", SurveyOptions.class);
+        assertEquals(count, result.getOptions().size());
+        assertEquals(seed, result.getSeed());
     }
 
 }
