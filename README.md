@@ -7,6 +7,8 @@ This project contains a [Spring Boot][boot] [REST][rest] service for "Supply lis
 
 Jess is going to use it in a demo. This service should be available at https://survey.atomist.com/surveyOptions?seed=123
 
+This should return JSON containing options, each with an imageLocation (URL to a kitty picture) and text (describing it).
+
 
 [boot]: https://projects.spring.io/spring-boot/
 [rest]: https://en.wikipedia.org/wiki/Representational_state_transfer
