@@ -7,7 +7,7 @@ jdk:
 - oraclejdk8
 branches:
   except:
-  - /\+travis\d+$/
+  - /^v?\d+\.\d+\.\d+/
 install: true
 script: docker login -u $ATOMIST_REPO_USER -p $ATOMIST_REPO_TOKEN $ATOMIST_DOCKER_REGISTRY
   && bash src/main/scripts/travis-build.bash
