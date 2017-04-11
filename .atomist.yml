@@ -19,3 +19,22 @@ generator:
     - "rootPackage": "com.jessitron"
     - "serviceClassName": "SurveyOptions"
 
+---
+kind: "operation"
+client: "rug-cli 0.29.0"
+editor:
+  name: "ConvertExistingProjectToGenerator"
+  group: "atomist-rugs"
+  artifact: "rug-editors"
+  version: "0.24.0"
+  origin:
+    repo: "https://github.com/atomist-rugs/rug-editors.git"
+    branch: "cff978c59d1635572a8de584f1a1daad5e8d7a68"
+    sha: "cff978c"
+  parameters:
+    - "archiveName": "sol-spring-rest-service"
+    - "groupId": "satellite-of-love"
+    - "version": "1.0.0"
+    - "generatorName": "NewRestService"
+    - "description": "A company-standard REST service"
+

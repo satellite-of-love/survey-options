@@ -1,0 +1,4 @@
+group: "satellite-of-love"
+artifact: "sol-spring-rest-service"
+version: "1.0.0"
+requires: "[0.22.0,1.0.0)"
