@@ -3,15 +3,11 @@
 [![Build Status](https://travis-ci.org/com.jessitron/survey-options.svg?branch=master)](https://travis-ci.org/com.jessitron/survey-options)
 [![Slack Status](https://join.atomist.com/badge.svg)](https://join.atomist.com)
 
-This project contains a [Spring Boot][boot] [REST][rest] service for "Supply list of options for a survey".
+This project is a generator for a [Spring Boot][boot] [REST][rest] service as standard in the Satellite-of-love organization.
 
-Jess is going to use it in a demo. This service should be available at https://survey.atomist.com/surveyOptions?seed=123
+## Use
 
-This should return JSON containing options, each with an imageLocation (URL to a kitty picture) and text (describing it).
-
-
-[boot]: https://projects.spring.io/spring-boot/
-[rest]: https://en.wikipedia.org/wiki/Representational_state_transfer
+You can run this generator to get the code for a standard REST service, either from the Rug command line or from our organization's Slack team.
 
 ## Development
 
