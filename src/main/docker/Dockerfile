@@ -9,4 +9,4 @@ WORKDIR /opt/build/
 
 EXPOSE 8080
 
-CMD ["java", "-Xmx128g", "org.springframework.boot.loader.JarLauncher"]
+CMD ["java", "-Xmx200m", "org.springframework.boot.loader.JarLauncher"]
