@@ -1,4 +1,4 @@
-FROM FROM java:8
+FROM FROM registry.hub.docker.com/java:8
 
 COPY org /opt/build/org
 COPY BOOT-INF/lib /opt/build/BOOT-INF/lib
