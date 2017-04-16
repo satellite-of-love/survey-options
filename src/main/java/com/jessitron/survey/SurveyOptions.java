@@ -40,5 +40,15 @@ public class SurveyOptions {
         this.options = options;
     }
 
+    @Override
+    public String toString() {
+        return "SurveyOptions{" +
+                "seed=" + seed +
+                ", count=" + count +
+                ", options=" + options +
+                '}';
+    }
+
+
     public SurveyOptions() {}
 }

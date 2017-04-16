@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @RestController
 public class SurveyOptionsController {
@@ -22,7 +24,11 @@ public class SurveyOptionsController {
     private List<SurveyOption> shuffledOptions(int seed) {
         List<SurveyOption> local = new ArrayList<>(allOptions);
         Collections.shuffle(local, new Random(seed)); // this actually modifies the list ugh
-        return local;
+        List<SurveyOption> withIndices = IntStream.range(0, local.size())
+                .mapToObj(i -> local.get(i).withPlace(i + 1))
+                .collect(Collectors.toList());
+
+        return withIndices;
     }
 
 
