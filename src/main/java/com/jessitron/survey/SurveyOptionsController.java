@@ -12,7 +12,7 @@ import java.util.stream.IntStream;
 @RestController
 public class SurveyOptionsController {
 
-    @CrossOrigin()
+    @CrossOrigin(origins = "http://localhost:8080")
     @RequestMapping(path = "/surveyOptions")
     public SurveyOptions surveyOptions(
             @RequestParam(value = "seed") int seed,
